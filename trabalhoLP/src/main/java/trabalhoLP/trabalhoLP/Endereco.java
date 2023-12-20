@@ -1,6 +1,8 @@
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+package trabalhoLP.trabalhoLP;
+
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Endereco {
@@ -50,4 +52,6 @@ public class Endereco {
     public void setNumero(Integer numero) {
         this.numero = numero;
     }
+
+
 }

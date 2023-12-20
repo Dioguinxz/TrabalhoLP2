@@ -1,6 +1,12 @@
+package trabalhoLP.trabalhoLP;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+
+import java.util.List;
+
 
 @Entity
 public class Cliente {
@@ -13,6 +19,7 @@ public class Cliente {
 
     @Column(length = 100)
     private String nome;
+
 
     public String getCpf() {
         return cpf;
@@ -29,4 +36,18 @@ public class Cliente {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+    public List<Endereco> getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(List<Endereco> endereco) {
+        this.endereco = endereco;
+    }
+
+    @OneToMany
+    private List<Endereco> endereco;
+
+
+
 }

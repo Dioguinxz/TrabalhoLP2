@@ -1,3 +1,5 @@
+package trabalhoLP.trabalhoLP;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -5,9 +7,6 @@ import jakarta.persistence.Id;
 @Entity
 public class Mamifero extends TipoAnimal{
 
-    @Id
-    @Column
-    private Integer id_mamifero;
 
     @Column(length = 50)
     private String raca;
@@ -15,13 +14,6 @@ public class Mamifero extends TipoAnimal{
     @Column
     private boolean possuiPelos;
 
-    public Integer getId_mamifero() {
-        return id_mamifero;
-    }
-
-    public void setId_mamifero(Integer id_mamifero) {
-        this.id_mamifero = id_mamifero;
-    }
 
     public String getRaca() {
         return raca;

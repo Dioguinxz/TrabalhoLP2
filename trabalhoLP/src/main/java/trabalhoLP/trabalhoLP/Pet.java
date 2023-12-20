@@ -1,6 +1,8 @@
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+package trabalhoLP.trabalhoLP;
+
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Pet {
@@ -14,6 +16,9 @@ public class Pet {
 
     @Column
     private Integer idade;
+
+    @OneToMany
+    private List<Atendimento> atendimento;
 
     public Integer getId_pet() {
         return id_pet;
@@ -37,5 +42,15 @@ public class Pet {
 
     public void setIdade(Integer idade) {
         this.idade = idade;
+    }
+
+
+
+    public List<Atendimento> getAtendimento() {
+        return atendimento;
+    }
+
+    public void setAtendimento(List<Atendimento> atendimento) {
+        this.atendimento = atendimento;
     }
 }

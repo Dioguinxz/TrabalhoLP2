@@ -1,6 +1,11 @@
+package trabalhoLP.trabalhoLP;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+
+import java.util.List;
 
 @Entity
 public class Produto {
@@ -14,6 +19,9 @@ public class Produto {
 
     @Column(length = 100)
     private String descricao;
+
+    @ManyToOne
+    private TipoAnimal tipoAnimal;
 
     public Integer getId_produto() {
         return id_produto;
@@ -37,5 +45,13 @@ public class Produto {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public TipoAnimal getTipoAnimal() {
+        return tipoAnimal;
+    }
+
+    public void setTipoAnimal(TipoAnimal tipoAnimal) {
+        this.tipoAnimal = tipoAnimal;
     }
 }

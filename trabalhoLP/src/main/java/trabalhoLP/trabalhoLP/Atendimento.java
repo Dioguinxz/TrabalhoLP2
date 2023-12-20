@@ -1,9 +1,13 @@
+package trabalhoLP.trabalhoLP;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import org.hibernate.Length;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 public class Atendimento {
@@ -33,6 +37,8 @@ public class Atendimento {
     @Column
     private String nome_veterinário;
 
+    @ManyToMany
+    private List<Produto> produto;
 
     public Integer getId_atendimento() {
         return id_atendimento;
@@ -96,5 +102,13 @@ public class Atendimento {
 
     public void setNome_veterinário(String nome_veterinário) {
         this.nome_veterinário = nome_veterinário;
+    }
+
+    public List<Produto> getProduto() {
+        return produto;
+    }
+
+    public void setProduto(List<Produto> produto) {
+        this.produto = produto;
     }
 }

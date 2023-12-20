@@ -1,16 +1,22 @@
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+package trabalhoLP.trabalhoLP;
+
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class TipoAnimal {
 
     @Id
     @Column
-    private Integer id_tipoAnimal;
+    protected Integer id_tipoAnimal;
 
     @Column(length = 50)
     private String especie;
+
+    @OneToMany
+    private List<Pet> pet;
 
     public Integer getId_tipoAnimal() {
         return id_tipoAnimal;
@@ -28,5 +34,11 @@ public class TipoAnimal {
         this.especie = especie;
     }
 
+    public List<Pet> getPet() {
+        return pet;
+    }
 
+    public void setPet(List<Pet> pet) {
+        this.pet = pet;
+    }
 }
