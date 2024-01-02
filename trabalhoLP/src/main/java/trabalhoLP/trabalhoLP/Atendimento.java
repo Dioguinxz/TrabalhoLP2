@@ -6,6 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import org.hibernate.Length;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -36,6 +37,9 @@ public class Atendimento {
 
     @Column
     private String nome_veterinário;
+
+    @Column
+    private LocalDateTime dataEncerramento;
 
     @ManyToMany
     private List<Produto> produto;
@@ -110,5 +114,13 @@ public class Atendimento {
 
     public void setProduto(List<Produto> produto) {
         this.produto = produto;
+    }
+
+    public LocalDateTime getDataEncerramento() {
+        return dataEncerramento;
+    }
+
+    public void setDataEncerramento(LocalDateTime dataEncerramento) {
+        this.dataEncerramento = dataEncerramento;
     }
 }

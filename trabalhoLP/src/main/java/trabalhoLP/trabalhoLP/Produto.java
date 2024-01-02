@@ -1,9 +1,6 @@
 package trabalhoLP.trabalhoLP;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 
 import java.util.List;
 
@@ -54,4 +51,8 @@ public class Produto {
     public void setTipoAnimal(TipoAnimal tipoAnimal) {
         this.tipoAnimal = tipoAnimal;
     }
+
+    @OneToMany
+    private List<Estoque> estoque;
+
 }
